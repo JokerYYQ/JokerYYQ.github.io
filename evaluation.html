@@ -1,0 +1,35 @@
+```javascript
+<script>
+function generateAdvisory() {
+    var specialty = document.getElementById("specialty").value;
+    var advisories = [];
+    if (specialty === "理科") {
+        advisories = ["适合去向为上海、江苏"];
+    } else if (specialty === "工科") {
+        advisories = ["适合去向为上海、福建"];
+    } else if (specialty === "文科") {
+        advisories = ["适合去向为上海、北京"];
+    } else if (specialty === "文艺") {
+        advisories = ["适合去向为广东、浙江"];
+    } else {
+        advisories = ["请输入您擅长的专业类型"];
+    }
+    document.getElementById("advisory").innerHTML = advisories.join("、");
+}
+</script>
+```
+
+
+```html
+<form>
+    <label for="specialty">请输入您擅长的专业类型：</label>
+    <select id="specialty" name="specialty">
+        <option value="理科">理科</option>
+        <option value="工科">工科</option>
+        <option value="文科">文科</option>
+        <option value="文艺">文艺</option>
+    </select>
+    <button type="button" onclick="generateAdvisory()">生成建议</button>
+</form>
+<p id="advisory"></p>
+```
